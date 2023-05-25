@@ -1,4 +1,4 @@
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { usePagesHook } from "@/hooks/pages";
 
 import Image from "next/image";
@@ -15,13 +15,10 @@ export default function NavigationFiles({ isOpen }: NavigationFilesInterface) {
   const heightControl = isOpen ? "h-auto" : "h-0";
 
   const { addPage } = usePagesHook();
-  const router = useRouter();
   const pathname = usePathname();
 
   function handleClickLink(href: string, route: string) {
     addPage(href, route);
-
-    router.push(href);
   }
 
   function renderRoutes() {

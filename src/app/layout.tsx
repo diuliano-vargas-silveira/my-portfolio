@@ -36,7 +36,9 @@ export default function RootLayout({
               <section className="flex w-full flex-col bg-gray-800">
                 <Tabs />
 
-                {children}
+                <div className="h-full border border-r-0 border-gray-950">
+                  {children}
+                </div>
               </section>
             </section>
             <footer></footer>
